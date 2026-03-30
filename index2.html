@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Viking Insurance Brokers | Nairobi, Kenya</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --blue:#1b6fa8;
+  --blue-dark:#0d4d7a;
+  --blue-light:#e8f4fd;
+  --blue-mid:#a8d4f0;
+  --sky:#d6eeff;
+  --gold:#c8a030;
+  --gold-light:#f5d878;
+  --white:#ffffff;
+  --off:#f7fbff;
+  --text:#1a2b3c;
+  --muted:#5a7a92;
+  --border:#cde4f5;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--blue-dark);
+  padding:9px 5%;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:13px;color:rgba(255,255,255,.78);
+  flex-wrap:wrap;gap:6px;
+}
+.topbar a{color:var(--blue-mid);text-decoration:none;margin-left:18px;}
+.topbar a:hover{color:#fff;}
+.topbar strong{color:#fff;}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:999;
+  background:#fff;
+  border-bottom:2px solid var(--sky);
+  box-shadow:0 2px 16px rgba(27,111,168,.1);
+  padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:10px;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:12px;
+  text-decoration:none;padding:14px 0;
+}
+.nav-logo-shield{
+  width:48px;height:48px;
+  background:linear-gradient(145deg,var(--blue),var(--blue-dark));
+  border-radius:12px;display:flex;align-items:center;justify-content:center;
+  font-size:24px;box-shadow:0 4px 14px rgba(13,77,122,.25);
+}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.15;}
+.nav-logo-name{font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:var(--blue-dark);letter-spacing:.5px;}
+.nav-logo-sub{font-size:10.5px;color:var(--muted);letter-spacing:1.6px;text-transform:uppercase;}
+
+.nav-links{display:flex;align-items:center;gap:2px;}
+.nav-links a{
+  padding:8px 15px;text-decoration:none;color:var(--text);
+  font-size:14px;font-weight:600;border-radius:7px;transition:all .2s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--blue);background:var(--sky);}
+
+.nav-actions{display:flex;gap:10px;align-items:center;}
+.btn-nav-login{
+  padding:9px 18px;border:2px solid var(--blue);background:transparent;
+  color:var(--blue);border-radius:8px;font-family:'Nunito',sans-serif;
+  font-size:13.5px;font-weight:700;cursor:pointer;transition:all .2s;
+}
+.btn-nav-login:hover{background:var(--blue);color:#fff;}
+.btn-nav-quote{
+  padding:9px 20px;
+  background:linear-gradient(135deg,var(--gold),#9a7020);
+  color:#fff;border:none;border-radius:8px;
+  font-family:'Nunito',sans-serif;font-size:13.5px;font-weight:700;
+  cursor:pointer;transition:all .2s;letter-spacing:.3px;
+}
+.btn-nav-quote:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(200,160,48,.4);}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 55%,#3a9bd5 100%);
+  padding:90px 5% 80px;
+  display:grid;grid-template-columns:1fr 380px;
+  gap:50px;align-items:center;
+  position:relative;overflow:hidden;
+  min-height:88vh;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.03) 0,rgba(255,255,255,.03) 1px,transparent 0,transparent 40px),
+                   repeating-linear-gradient(-60deg,rgba(255,255,255,.03) 0,rgba(255,255,255,.03) 1px,transparent 0,transparent 40px);
+}
+.hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 65%);
+  top:-200px;right:-100px;pointer-events:none;}
+
+.hero-left{position:relative;z-index:2;}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.13);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.22);border-radius:40px;
+  padding:7px 16px;margin-bottom:26px;
+  font-size:13px;color:var(--sky);font-weight:600;
+  animation:fadeUp .7s ease both;
+}
+.hero-pill span{width:8px;height:8px;background:var(--gold-light);border-radius:50%;display:inline-block;}
+
+.hero h1{
+  font-family:'Cinzel',serif;
+  font-size:clamp(32px,4.8vw,62px);
+  font-weight:900;color:#fff;
+  line-height:1.1;margin-bottom:20px;
+  animation:fadeUp .7s .1s ease both;
+}
+.hero h1 em{color:var(--gold-light);font-style:normal;}
+
+.hero-desc{
+  font-size:17px;color:rgba(255,255,255,.82);
+  line-height:1.75;max-width:520px;
+  margin-bottom:36px;font-weight:400;
+  animation:fadeUp .7s .2s ease both;
+}
+
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .7s .3s ease both;}
+.btn-hero-primary{
+  padding:15px 30px;
+  background:var(--gold);color:#fff;border:none;border-radius:10px;
+  font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;
+  cursor:pointer;transition:all .2s;letter-spacing:.3px;
+  box-shadow:0 8px 24px rgba(200,160,48,.4);
+}
+.btn-hero-primary:hover{background:var(--gold-light);color:var(--blue-dark);transform:translateY(-2px);}
+.btn-hero-ghost{
+  padding:15px 30px;background:rgba(255,255,255,.12);
+  color:#fff;border:2px solid rgba(255,255,255,.35);border-radius:10px;
+  font-family:'Nunito',sans-serif;font-size:15px;font-weight:700;
+  cursor:pointer;transition:all .2s;
+}
+.btn-hero-ghost:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.6);}
+
+.hero-badges{
+  display:flex;gap:24px;margin-top:50px;flex-wrap:wrap;
+  animation:fadeUp .7s .4s ease both;
+}
+.hero-badge-item{border-left:2px solid rgba(255,255,255,.22);padding-left:14px;}
+.hero-badge-item .num{font-family:'Cinzel',serif;font-size:26px;color:#fff;font-weight:700;}
+.hero-badge-item .lbl{font-size:11.5px;color:rgba(255,255,255,.6);letter-spacing:1.3px;text-transform:uppercase;}
+
+/* QUOTE CARD */
+.quote-card{
+  background:rgba(255,255,255,.97);
+  border-radius:20px;padding:32px 26px;
+  box-shadow:0 28px 70px rgba(13,77,122,.3);
+  border:1px solid rgba(255,255,255,.9);
+  position:relative;z-index:2;
+  animation:slideIn .8s .3s ease both;
+}
+@keyframes slideIn{from{opacity:0;transform:translateX(40px);}to{opacity:1;transform:translateX(0);}}
+
+.qc-head{display:flex;align-items:center;gap:10px;margin-bottom:22px;}
+.qc-icon{
+  width:40px;height:40px;background:var(--sky);border-radius:9px;
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.qc-title{font-family:'Cinzel',serif;font-size:16px;color:var(--blue-dark);font-weight:700;}
+.qc-sub{font-size:12px;color:var(--muted);}
+
+.qf{margin-bottom:13px;}
+.qf label{display:block;font-size:11.5px;font-weight:700;color:var(--blue-dark);margin-bottom:5px;letter-spacing:.5px;text-transform:uppercase;}
+.qf input,.qf select{
+  width:100%;padding:10px 12px;
+  border:2px solid var(--border);border-radius:8px;
+  font-family:'Nunito',sans-serif;font-size:13.5px;color:var(--text);
+  background:var(--off);outline:none;transition:border-color .2s;
+}
+.qf input:focus,.qf select:focus{border-color:var(--blue);background:#fff;}
+.btn-get-quote{
+  width:100%;padding:13px;margin-top:4px;
+  background:linear-gradient(135deg,var(--gold),#8a6010);
+  color:#fff;border:none;border-radius:10px;
+  font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;
+  cursor:pointer;transition:all .2s;letter-spacing:.4px;
+}
+.btn-get-quote:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(200,160,48,.45);}
+
+.hero-wave{line-height:0;overflow:hidden;margin-top:-2px;}
+
+/* ── PARTNER LOGOS STRIP ── */
+.partners{
+  background:#fff;padding:32px 5%;
+  border-bottom:1px solid var(--border);
+}
+.partners-label{text-align:center;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
+.partners-logos{
+  display:flex;justify-content:center;align-items:center;
+  flex-wrap:wrap;gap:12px;
+}
+.partner-chip{
+  background:var(--sky);border-radius:8px;padding:10px 20px;
+  font-size:13px;font-weight:700;color:var(--blue-dark);
+  border:1px solid var(--border);white-space:nowrap;
+}
+
+/* ── SHARED SECTION ── */
+.section{padding:80px 5%;}
+.section-alt{background:var(--off);}
+.sec-label{font-size:11.5px;font-weight:800;color:var(--blue);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px;}
+.sec-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.2vw,40px);color:var(--blue-dark);line-height:1.2;margin-bottom:12px;}
+.sec-desc{font-size:15.5px;color:var(--muted);line-height:1.8;max-width:560px;}
+.sec-head{text-align:center;margin-bottom:56px;}
+.sec-head .sec-desc{margin:0 auto;}
+
+/* ── PRODUCTS ── */
+.products-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:22px;max-width:1200px;margin:0 auto;
+}
+.prod-card{
+  background:#fff;border-radius:16px;padding:30px 24px;
+  border:2px solid var(--sky);transition:all .25s;cursor:pointer;
+  position:relative;overflow:hidden;
+}
+.prod-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--blue),#3a9bd5);
+  transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.prod-card:hover{border-color:var(--blue-mid);transform:translateY(-6px);box-shadow:0 16px 40px rgba(27,111,168,.14);}
+.prod-card:hover::after{transform:scaleX(1);}
+.prod-icon{font-size:38px;margin-bottom:14px;}
+.prod-name{font-family:'Cinzel',serif;font-size:16px;color:var(--blue-dark);margin-bottom:8px;}
+.prod-desc{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:16px;}
+.prod-cta{font-size:13px;color:var(--blue);font-weight:700;display:flex;align-items:center;gap:4px;}
+
+/* ── WHY CHOOSE US ── */
+.why-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;max-width:1100px;margin:0 auto;align-items:center;
+}
+.why-features{display:flex;flex-direction:column;gap:22px;}
+.why-feat{display:flex;gap:16px;align-items:flex-start;}
+.feat-icon{
+  width:44px;height:44px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--sky),var(--blue-mid));
+  border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.feat-text h4{font-size:15.5px;font-weight:700;color:var(--blue-dark);margin-bottom:4px;}
+.feat-text p{font-size:13.5px;color:var(--muted);line-height:1.65;}
+
+.why-visual-box{
+  background:linear-gradient(150deg,var(--blue-dark),var(--blue));
+  border-radius:22px;padding:40px 32px;
+  box-shadow:0 24px 60px rgba(13,77,122,.25);
+  display:flex;flex-direction:column;gap:16px;
+}
+.wv-stat{
+  background:rgba(255,255,255,.11);border-radius:12px;padding:20px 22px;
+  border:1px solid rgba(255,255,255,.14);
+}
+.wv-stat .n{font-family:'Cinzel',serif;font-size:32px;color:#fff;font-weight:700;}
+.wv-stat .l{font-size:12.5px;color:rgba(255,255,255,.62);margin-top:2px;}
+.wv-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:24px;max-width:1100px;margin:0 auto;
+}
+.testi-card{
+  background:#fff;border-radius:16px;padding:28px 26px;
+  border:2px solid var(--sky);transition:all .22s;
+}
+.testi-card:hover{border-color:var(--blue-mid);box-shadow:0 12px 32px rgba(27,111,168,.1);}
+.testi-stars{color:var(--gold);font-size:18px;margin-bottom:12px;}
+.testi-text{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:16px;font-style:italic;}
+.testi-author{font-size:13.5px;font-weight:700;color:var(--blue-dark);}
+.testi-role{font-size:12px;color:var(--muted);}
+
+/* ── CAREERS ── */
+.careers-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:22px;max-width:1100px;margin:0 auto;
+}
+.job-card{
+  background:#fff;border-radius:14px;padding:28px 24px;
+  border:2px solid var(--sky);transition:all .22s;
+}
+.job-card:hover{border-color:var(--blue-mid);transform:translateY(-4px);box-shadow:0 12px 30px rgba(27,111,168,.12);}
+.job-dept{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:7px;}
+.job-title{font-family:'Cinzel',serif;font-size:17px;color:var(--blue-dark);margin-bottom:8px;}
+.job-meta{font-size:12.5px;color:var(--muted);display:flex;gap:14px;margin-bottom:12px;}
+.job-desc{font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:18px;}
+.btn-apply{
+  padding:9px 20px;background:var(--sky);color:var(--blue-dark);
+  border:none;border-radius:8px;font-family:'Nunito',sans-serif;
+  font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;
+}
+.btn-apply:hover{background:var(--blue);color:#fff;}
+
+/* ── CONTACT ── */
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1.4fr;
+  gap:56px;max-width:1100px;margin:0 auto;align-items:start;
+}
+.contact-blocks{display:flex;flex-direction:column;gap:28px;}
+.c-block h4{font-family:'Cinzel',serif;font-size:15px;color:var(--blue-dark);margin-bottom:7px;}
+.c-block p{font-size:14px;color:var(--muted);line-height:1.75;}
+
+.contact-form{
+  background:#fff;border-radius:18px;padding:38px;
+  box-shadow:0 12px 40px rgba(27,111,168,.1);border:1px solid var(--sky);
+}
+.contact-form h3{font-family:'Cinzel',serif;font-size:20px;color:var(--blue-dark);margin-bottom:5px;}
+.contact-form p{font-size:13px;color:var(--muted);margin-bottom:26px;}
+.cf{margin-bottom:15px;}
+.cf label{display:block;font-size:12.5px;font-weight:700;color:var(--blue-dark);margin-bottom:6px;letter-spacing:.4px;}
+.cf input,.cf select,.cf textarea{
+  width:100%;padding:11px 13px;border:2px solid var(--border);
+  border-radius:9px;font-family:'Nunito',sans-serif;font-size:14px;
+  color:var(--text);background:var(--off);outline:none;transition:border-color .2s;resize:none;
+}
+.cf input:focus,.cf select:focus,.cf textarea:focus{border-color:var(--blue);background:#fff;}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.btn-send{
+  width:100%;padding:14px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  color:#fff;border:none;border-radius:10px;font-family:'Nunito',sans-serif;
+  font-size:15px;font-weight:800;cursor:pointer;transition:all .2s;margin-top:6px;
+}
+.btn-send:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(27,111,168,.35);}
+
+/* ── CTA BANNER ── */
+.cta-banner{
+  background:linear-gradient(135deg,var(--blue-dark),var(--blue));
+  padding:70px 5%;text-align:center;
+}
+.cta-banner h2{font-family:'Cinzel',serif;font-size:clamp(24px,3.5vw,40px);color:#fff;margin-bottom:14px;}
+.cta-banner p{font-size:16px;color:rgba(255,255,255,.78);max-width:520px;margin:0 auto 32px;}
+.btn-cta-big{
+  padding:17px 40px;background:var(--gold);color:#fff;border:none;border-radius:12px;
+  font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;cursor:pointer;
+  transition:all .2s;box-shadow:0 8px 28px rgba(200,160,48,.4);letter-spacing:.4px;margin-right:12px;
+}
+.btn-cta-big:hover{background:var(--gold-light);color:var(--blue-dark);transform:translateY(-2px);}
+.btn-cta-ghost{
+  padding:17px 40px;background:rgba(255,255,255,.13);color:#fff;
+  border:2px solid rgba(255,255,255,.35);border-radius:12px;
+  font-family:'Nunito',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;
+}
+.btn-cta-ghost:hover{background:rgba(255,255,255,.22);}
+
+/* ── FOOTER ── */
+footer{background:var(--blue-dark);color:rgba(255,255,255,.72);padding:70px 5% 28px;}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr repeat(4,1fr);
+  gap:40px;padding-bottom:50px;
+  border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:28px;
+}
+.footer-brand p{font-size:13.5px;line-height:1.8;color:rgba(255,255,255,.58);margin-top:14px;}
+.footer-brand .logo-name{color:#fff;}
+.footer-brand .logo-sub{color:var(--blue-mid);}
+
+.fc h5{font-family:'Cinzel',serif;font-size:12.5px;color:#fff;text-transform:uppercase;letter-spacing:.6px;margin-bottom:18px;}
+.fc a{display:block;color:rgba(255,255,255,.58);text-decoration:none;font-size:13.5px;margin-bottom:9px;transition:color .2s;}
+.fc a:hover{color:var(--blue-mid);}
+.fc .new{
+  display:inline-block;font-size:10px;background:rgba(200,160,48,.25);
+  color:var(--gold-light);border-radius:4px;padding:2px 6px;margin-left:6px;font-weight:700;
+}
+
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12.5px;color:rgba(255,255,255,.38);flex-wrap:wrap;gap:10px;
+}
+.footer-bottom-links{display:flex;gap:18px;}
+.footer-bottom-links a{color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s;}
+.footer-bottom-links a:hover{color:var(--blue-mid);}
+
+/* ── MODAL ── */
+.modal-bg{
+  display:none;position:fixed;inset:0;
+  background:rgba(13,77,122,.55);backdrop-filter:blur(7px);
+  z-index:3000;align-items:center;justify-content:center;
+}
+.modal-bg.open{display:flex;}
+.modal-box{
+  background:#fff;border-radius:18px;padding:46px 38px 38px;
+  width:min(470px,94vw);position:relative;
+  box-shadow:0 32px 80px rgba(13,77,122,.28);
+  animation:mIn .35s cubic-bezier(.22,.68,0,1.2);
+}
+@keyframes mIn{from{opacity:0;transform:scale(.88)translateY(18px);}to{opacity:1;transform:scale(1)translateY(0);}}
+.modal-x{position:absolute;top:15px;right:18px;background:none;border:none;font-size:22px;color:var(--muted);cursor:pointer;}
+.modal-x:hover{color:var(--blue-dark);}
+.mtabs{display:flex;gap:4px;margin-bottom:26px;background:var(--sky);border-radius:10px;padding:4px;}
+.mtab{
+  flex:1;padding:10px;border:none;border-radius:7px;
+  font-family:'Nunito',sans-serif;font-size:14.5px;font-weight:700;
+  cursor:pointer;background:transparent;color:var(--muted);transition:all .2s;
+}
+.mtab.active{background:#fff;color:var(--blue-dark);box-shadow:0 2px 8px rgba(27,111,168,.15);}
+.mtitle{font-family:'Cinzel',serif;font-size:21px;color:var(--blue-dark);margin-bottom:5px;}
+.msub{font-size:13px;color:var(--muted);margin-bottom:22px;}
+.tc{display:none;} .tc.active{display:block;}
+.mf{margin-bottom:15px;}
+.mf label{display:block;font-size:12.5px;font-weight:700;color:var(--blue-dark);margin-bottom:6px;letter-spacing:.4px;}
+.mf input,.mf select{
+  width:100%;padding:11px 13px;border:2px solid var(--border);
+  border-radius:9px;font-family:'Nunito',sans-serif;font-size:14px;
+  color:var(--text);background:var(--off);outline:none;transition:border-color .2s;
+}
+.mf input:focus{border-color:var(--blue);background:#fff;}
+.mf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.btn-modal-submit{
+  width:100%;padding:14px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  color:#fff;border:none;border-radius:10px;font-family:'Nunito',sans-serif;
+  font-size:15px;font-weight:800;cursor:pointer;transition:all .2s;margin-top:6px;
+}
+.btn-modal-submit:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(27,111,168,.35);}
+.mfooter{text-align:center;margin-top:13px;font-size:13px;color:var(--muted);}
+.mfooter a{color:var(--blue);font-weight:700;cursor:pointer;text-decoration:none;}
+.mfooter a:hover{text-decoration:underline;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── MOBILE ── */
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;padding:90px 5% 60px;}
+  .quote-card{width:100%;}
+  .why-grid,.contact-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  nav{padding:0 4%;}
+  .nav-links{display:none;}
+  .section{padding:60px 5%;}
+}
+</style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div class="modal-bg" id="authModal">
+  <div class="modal-box">
+    <button class="modal-x" onclick="closeModal()">✕</button>
+    <div class="mtabs">
+      <button class="mtab active" onclick="switchTab('login')">Log In</button>
+      <button class="mtab" onclick="switchTab('signup')">Sign Up</button>
+    </div>
+    <!-- LOGIN -->
+    <div class="tc active" id="tc-login">
+      <div class="mtitle">Welcome Back</div>
+      <div class="msub">Access your policies, claims &amp; documents</div>
+      <div class="mf"><label>Email Address</label><input type="email" placeholder="you@example.com"></div>
+      <div class="mf"><label>Password</label><input type="password" placeholder="••••••••"></div>
+      <button class="btn-modal-submit">Log In to My Account</button>
+      <div class="mfooter"><a href="#">Forgot password?</a> &nbsp;·&nbsp; New here? <a onclick="switchTab('signup')">Sign Up Free</a></div>
+    </div>
+    <!-- SIGNUP -->
+    <div class="tc" id="tc-signup">
+      <div class="mtitle">Create Account</div>
+      <div class="msub">Join thousands of clients protected by Viking</div>
+      <div class="mf-row">
+        <div class="mf"><label>First Name</label><input type="text" placeholder="John"></div>
+        <div class="mf"><label>Last Name</label><input type="text" placeholder="Kamau"></div>
+      </div>
+      <div class="mf"><label>Email Address</label><input type="email" placeholder="you@example.com"></div>
+      <div class="mf"><label>Phone Number</label><input type="tel" placeholder="+254 7XX XXX XXX"></div>
+      <div class="mf"><label>Password</label><input type="password" placeholder="Min. 8 characters"></div>
+      <button class="btn-modal-submit">Create My Account</button>
+      <div class="mfooter">Already registered? <a onclick="switchTab('login')">Log In</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>📍 Viking House, 5th Floor, Westlands Road, <strong>Nairobi, Kenya</strong></span>
+  <div>
+    <a href="tel:+254700000000">📞 +254 700 000 000</a>
+    <a href="mailto:info@vikinginsurance.co.ke">✉ info@vikinginsurance.co.ke</a>
+    <a href="#">Mon–Fri: 8am–6pm</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a class="nav-logo" href="#home">
+    <div class="nav-logo-shield">🛡️</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">VIKING</span>
+      <span class="nav-logo-sub">Insurance Brokers</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#home" class="active">Home</a>
+    <a href="#products">Products</a>
+    <a href="#why">Why Us</a>
+    <a href="#careers">Careers</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-nav-login" onclick="openModal('login')">Log In</button>
+    <button class="btn-nav-quote" onclick="document.getElementById('quote-card').scrollIntoView({behavior:'smooth'})">Get A Quote</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-left">
+    <div class="hero-pill"><span></span> IRA Licensed Insurance Broker · Kenya</div>
+    <h1>Your Family's<br>Protection,<br>Our <em>Priority</em></h1>
+    <p class="hero-desc">Viking Insurance Brokers has been protecting Kenyan families and businesses since 2005. We compare over 40 underwriters to find you the strongest cover at the best price.</p>
+    <div class="hero-btns">
+      <button class="btn-hero-primary" onclick="document.getElementById('quote-card').scrollIntoView({behavior:'smooth'})">Get A Free Quote Today</button>
+      <button class="btn-hero-ghost" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Our Products</button>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge-item"><div class="num">20+</div><div class="lbl">Years of Trust</div></div>
+      <div class="hero-badge-item"><div class="num">50K+</div><div class="lbl">Policies Issued</div></div>
+      <div class="hero-badge-item"><div class="num">99%</div><div class="lbl">Claims Settled</div></div>
+      <div class="hero-badge-item"><div class="num">40+</div><div class="lbl">Partner Insurers</div></div>
+    </div>
+  </div>
+
+  <!-- QUICK QUOTE CARD -->
+  <div class="quote-card" id="quote-card">
+    <div class="qc-head">
+      <div class="qc-icon">⚡</div>
+      <div>
+        <div class="qc-title">Quick Quote</div>
+        <div class="qc-sub">Get covered in minutes</div>
+      </div>
+    </div>
+    <div class="qf"><label>Insurance Type</label>
+      <select>
+        <option>Select product…</option>
+        <option>Motor – Comprehensive</option>
+        <option>Motor – Third Party</option>
+        <option>Medical / Health</option>
+        <option>Life Insurance</option>
+        <option>Home &amp; Property</option>
+        <option>Travel Insurance</option>
+        <option>Business / Commercial</option>
+        <option>Marine Cargo</option>
+        <option>Agriculture Insurance</option>
+        <option>Engineering Insurance</option>
+      </select>
+    </div>
+    <div class="qf"><label>Full Name</label><input type="text" placeholder="e.g. John Kamau"></div>
+    <div class="qf"><label>Phone Number</label><input type="tel" placeholder="+254 7XX XXX XXX"></div>
+    <div class="qf"><label>Email Address</label><input type="email" placeholder="you@example.com"></div>
+    <div class="qf"><label>Sum Insured (KES)</label><input type="number" placeholder="e.g. 2,000,000"></div>
+    <button class="btn-get-quote">⚡ Get My Free Quote Now</button>
+  </div>
+</section>
+
+<!-- WAVE DIVIDER -->
+<div class="hero-wave" style="background:linear-gradient(135deg,var(--blue-dark),#3a9bd5);">
+  <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;">
+    <path d="M0,35 C360,70 1080,0 1440,35 L1440,70 L0,70 Z" fill="#fff"/>
+  </svg>
+</div>
+
+<!-- PARTNER INSURERS -->
+<div class="partners">
+  <div class="partners-label">Underwritten by Kenya's leading insurers</div>
+  <div class="partners-logos">
+    <div class="partner-chip">Jubilee Insurance</div>
+    <div class="partner-chip">CIC Group</div>
+    <div class="partner-chip">AAR Insurance</div>
+    <div class="partner-chip">Britam</div>
+    <div class="partner-chip">APA Insurance</div>
+    <div class="partner-chip">GA Insurance</div>
+    <div class="partner-chip">Madison Insurance</div>
+    <div class="partner-chip">Resolution Insurance</div>
+    <div class="partner-chip">Trident Insurance</div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="section section-alt" id="products">
+  <div class="sec-head">
+    <div class="sec-label">Our Products</div>
+    <div class="sec-title">Insurance Solutions for Every Need</div>
+    <p class="sec-desc">From individuals to large corporates — we broker the most competitive policies across all classes of insurance business.</p>
+  </div>
+  <div class="products-grid">
+    <div class="prod-card">
+      <div class="prod-icon">🚗</div>
+      <div class="prod-name">Motor Insurance</div>
+      <div class="prod-desc">Comprehensive, TPFT, and TPO cover for private cars, commercial vehicles, PSVs, and fleets. Includes roadside assistance and windscreen cover.</div>
+      <div class="prod-cta">Learn more →</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🏥</div>
+      <div class="prod-name">Medical &amp; Health</div>
+      <div class="prod-desc">Individual, family, and corporate medical plans with inpatient, outpatient, maternity, dental, and optical benefits across a wide panel of hospitals.</div>
+      <div class="prod-cta">Learn more →</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🏠</div>
+      <div class="prod-name">Home &amp; Property</div>
+      <div class="prod-desc">Protect your home, contents, and landlord investments against fire, theft, flood, and all-risks perils. Includes tenant and domestic worker liability.</div>
+      <div class="prod-cta">Learn more →</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">💼</div>
+      <div class="prod-name">Life Insurance</div>
+      <div class="prod-desc">Term life, whole life, endowment, credit life, and last expense covers. Secure your family's financial stability with flexible, affordable premiums.</div>
+      <div class="prod-cta">Learn more →</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">✈️</div>
+      <div class="prod-name">Travel Insurance</div>
+      <div class="prod-desc">Single trip, multi-trip annual, and student travel covers including emergency medical, evacuation, trip cancellation, baggage loss, and delays.</div>
+      <div class="prod-cta">Learn more →</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🏢</div>
+      <div class="prod-name">Commercial Insurance</div>
+      <div class="prod-desc">Fire, business interruption, money, burglary, employer's liability, public liability, and professional indemnity — safeguarding your business assets.</div>
+      <div class="prod-cta">Learn more →</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">⚓</div>
+      <div class="prod-name">Marine &amp; Cargo</div>
+      <div class="prod-desc">Import, export, and inland transit cover for goods by sea, air, or road. Enjoy your leisure activities and marine assets with proper protection.</div>
+      <div class="prod-cta">Learn more →</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🌾</div>
+      <div class="prod-name">Agriculture Insurance</div>
+      <div class="prod-desc">Crop, livestock, and poultry covers tailored for smallholder farmers and large agribusiness enterprises. Includes index-based weather insurance.</div>
+      <div class="prod-cta">Learn more →</div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">⚙️</div>
+      <div class="prod-name">Engineering Insurance</div>
+      <div class="prod-desc">Contractor's all risks, erection all risks, machinery breakdown, and electronic equipment cover for construction and industrial operations.</div>
+      <div class="prod-cta">Learn more →</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE VIKING -->
+<section class="section" id="why">
+  <div class="why-grid">
+    <div>
+      <div class="sec-label">Why Choose Viking?</div>
+      <div class="sec-title">Strength You Can Rely On</div>
+      <p class="sec-desc" style="margin-bottom:32px;">We are an independent, IRA-licensed broker — which means we work for you, not the insurer. We compare the whole market to give you the best cover at the right price.</p>
+      <div class="why-features">
+        <div class="why-feat">
+          <div class="feat-icon">🎯</div>
+          <div class="feat-text"><h4>Independent &amp; Unbiased Advice</h4><p>We compare over 40 insurers to find you the best terms — no hidden incentives, no tied products.</p></div>
+        </div>
+        <div class="why-feat">
+          <div class="feat-icon">📞</div>
+          <div class="feat-text"><h4>Speak Directly With a Licensed Agent</h4><p>Call or visit our Nairobi office and speak with a qualified professional who understands your unique needs.</p></div>
+        </div>
+        <div class="why-feat">
+          <div class="feat-icon">⚡</div>
+          <div class="feat-text"><h4>Fast Claims Settlement</h4><p>Dedicated claims advocates handle every step — from notification to final settlement — so you're never alone.</p></div>
+        </div>
+        <div class="why-feat">
+          <div class="feat-icon">💰</div>
+          <div class="feat-text"><h4>Bundle &amp; Save</h4><p>Combine multiple policies — motor, medical, home — and enjoy significant multi-policy discounts.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual-box">
+      <div class="wv-row">
+        <div class="wv-stat"><div class="n">50K+</div><div class="l">Policies managed</div></div>
+        <div class="wv-stat"><div class="n">KES 2B+</div><div class="l">Claims settled</div></div>
+      </div>
+      <div class="wv-stat"><div class="n">99%</div><div class="l">Client retention — our proudest number</div></div>
+      <div class="wv-row">
+        <div class="wv-stat"><div class="n">20+</div><div class="l">Years in Kenya</div></div>
+        <div class="wv-stat"><div class="n">A+</div><div class="l">IRA Rating</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-alt">
+  <div class="sec-head">
+    <div class="sec-label">Client Reviews</div>
+    <div class="sec-title">What Our Clients Say</div>
+    <p class="sec-desc">Thousands of Kenyans trust Viking Insurance Brokers. Here's what some of them have to say.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Viking Insurance has been handling our fleet of 30 vehicles for over 10 years. Their team is always responsive, professional, and genuinely fights for the client when claims arise. Highly recommended."</p>
+      <div class="testi-author">David M.</div>
+      <div class="testi-role">Transport Company Director, Nairobi</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"They found me a comprehensive medical plan for my whole family at a price I could not believe. The onboarding was seamless and whenever I've had a hospital visit, pre-authorisation is sorted within minutes."</p>
+      <div class="testi-author">Grace W.</div>
+      <div class="testi-role">HR Manager, Westlands</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"After my car accident, the Viking claims team was incredible. They handled everything with the insurer and I had my vehicle repaired within two weeks. That kind of service is rare. I won't go anywhere else."</p>
+      <div class="testi-author">Brian O.</div>
+      <div class="testi-role">Individual Client, Nairobi</div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREERS -->
+<section class="section" id="careers">
+  <div class="sec-head">
+    <div class="sec-label">Careers</div>
+    <div class="sec-title">Join the Viking Team</div>
+    <p class="sec-desc">We are always looking for talented, driven professionals to grow with us in Kenya's dynamic insurance industry.</p>
+  </div>
+  <div class="careers-grid">
+    <div class="job-card">
+      <div class="job-dept">Sales &amp; BD</div>
+      <div class="job-title">Insurance Sales Executive</div>
+      <div class="job-meta"><span>📍 Nairobi</span><span>⏱ Full Time</span></div>
+      <div class="job-desc">Drive new business across personal and commercial lines. Minimum COP qualification. 2+ years sales experience preferred.</div>
+      <button class="btn-apply" onclick="openModal('signup')">Apply Now</button>
+    </div>
+    <div class="job-card">
+      <div class="job-dept">Claims</div>
+      <div class="job-title">Motor Claims Handler</div>
+      <div class="job-meta"><span>📍 Nairobi</span><span>⏱ Full Time</span></div>
+      <div class="job-desc">Process and settle motor insurance claims. Experience liaising with garages, surveyors, and underwriters is an advantage.</div>
+      <button class="btn-apply" onclick="openModal('signup')">Apply Now</button>
+    </div>
+    <div class="job-card">
+      <div class="job-dept">Medical</div>
+      <div class="job-title">Medical Underwriting Officer</div>
+      <div class="job-meta"><span>📍 Nairobi</span><span>⏱ Full Time</span></div>
+      <div class="job-desc">Assess medical insurance risks and coordinate with health providers. Nursing or clinical background is an added advantage.</div>
+      <button class="btn-apply" onclick="openModal('signup')">Apply Now</button>
+    </div>
+    <div class="job-card">
+      <div class="job-dept">Technology</div>
+      <div class="job-title">Software Developer</div>
+      <div class="job-meta"><span>📍 Nairobi</span><span>⏱ Full Time</span></div>
+      <div class="job-desc">Build and maintain our client portal and internal systems. Stack: React, Node.js, PostgreSQL. Minimum 3 years experience.</div>
+      <button class="btn-apply" onclick="openModal('signup')">Apply Now</button>
+    </div>
+    <div class="job-card">
+      <div class="job-dept">Corporate Relations</div>
+      <div class="job-title">Relationship Manager</div>
+      <div class="job-meta"><span>📍 Nairobi</span><span>⏱ Full Time</span></div>
+      <div class="job-desc">Manage and grow our corporate client base. Minimum 5 years in insurance broking or financial services required.</div>
+      <button class="btn-apply" onclick="openModal('signup')">Apply Now</button>
+    </div>
+    <div class="job-card">
+      <div class="job-dept">Graduate Programme</div>
+      <div class="job-title">Graduate Trainee</div>
+      <div class="job-meta"><span>📍 Nairobi</span><span>⏱ 12 Months</span></div>
+      <div class="job-desc">Structured rotation through underwriting, claims, sales, and client service. Open to fresh university graduates in any business field.</div>
+      <button class="btn-apply" onclick="openModal('signup')">Apply Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Ready to Protect What Matters Most?</h2>
+  <p>Our team of licensed insurance professionals is ready to help you find the perfect coverage at competitive rates.</p>
+  <button class="btn-cta-big" onclick="document.getElementById('quote-card').scrollIntoView({behavior:'smooth'})">GET A FREE QUOTE NOW</button>
+  <button class="btn-cta-ghost" onclick="openModal('login')">Log In to My Account</button>
+</div>
+
+<!-- CONTACT -->
+<section class="section section-alt" id="contact">
+  <div class="sec-head">
+    <div class="sec-label">Contact Us</div>
+    <div class="sec-title">We're Here to Help</div>
+    <p class="sec-desc">Reach out by phone, email, or fill in the form and a Viking expert will respond within 2 business hours.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-blocks">
+      <div class="c-block"><h4>🏢 Head Office</h4><p>Viking House, 5th Floor<br>Westlands Road, Nairobi<br>P.O. Box 00100, Nairobi, Kenya</p></div>
+      <div class="c-block"><h4>📞 Telephone</h4><p>Main: +254 700 000 000<br>Claims: +254 711 000 000<br>WhatsApp: +254 722 000 000</p></div>
+      <div class="c-block"><h4>✉ Email</h4><p>info@vikinginsurance.co.ke<br>claims@vikinginsurance.co.ke<br>hr@vikinginsurance.co.ke</p></div>
+      <div class="c-block"><h4>🕐 Business Hours</h4><p>Mon–Fri: 8:00am – 6:00pm<br>Saturday: 9:00am – 1:00pm<br>Claims Emergency: 24 / 7</p></div>
+    </div>
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <p>A licensed Viking broker will be in touch shortly.</p>
+      <div class="cf-row">
+        <div class="cf"><label>First Name</label><input type="text" placeholder="John"></div>
+        <div class="cf"><label>Last Name</label><input type="text" placeholder="Kamau"></div>
+      </div>
+      <div class="cf"><label>Email Address</label><input type="email" placeholder="you@example.com"></div>
+      <div class="cf"><label>Phone Number</label><input type="tel" placeholder="+254 7XX XXX XXX"></div>
+      <div class="cf"><label>Product of Interest</label>
+        <select>
+          <option>Select…</option>
+          <option>Motor Insurance</option>
+          <option>Medical / Health</option>
+          <option>Life Insurance</option>
+          <option>Home &amp; Property</option>
+          <option>Travel Insurance</option>
+          <option>Business / Commercial</option>
+          <option>Marine Cargo</option>
+          <option>Agriculture Insurance</option>
+          <option>Engineering Insurance</option>
+          <option>General Enquiry</option>
+        </select>
+      </div>
+      <div class="cf"><label>Message</label><textarea rows="4" placeholder="How can we help you?"></textarea></div>
+      <button class="btn-send">Send Message 🛡️</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <!-- Brand -->
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:11px;margin-bottom:4px;">
+        <div style="width:42px;height:42px;background:linear-gradient(145deg,var(--blue),var(--blue-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">🛡️</div>
+        <div>
+          <div class="logo-name" style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#fff;">VIKING</div>
+          <div class="logo-sub" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue-mid);">Insurance Brokers</div>
+        </div>
+      </div>
+      <p>IRA-licensed insurance broker serving Kenyan families and businesses since 2005. Your protection. Our priority.</p>
+    </div>
+
+    <!-- Motor Lines -->
+    <div class="fc">
+      <h5>Motor Lines</h5>
+      <a href="#">Comprehensive Motor</a>
+      <a href="#">Third Party Fire &amp; Theft</a>
+      <a href="#">Third Party Only</a>
+      <a href="#">PSV &amp; Matatu Cover</a>
+      <a href="#">Fleet Insurance</a>
+      <a href="#">Motor Cycle Cover</a>
+    </div>
+
+    <!-- Health & Life -->
+    <div class="fc">
+      <h5>Health &amp; Life</h5>
+      <a href="#">Individual Medical <span class="new">Popular</span></a>
+      <a href="#">Family Medical</a>
+      <a href="#">Corporate Medical</a>
+      <a href="#">Term Life</a>
+      <a href="#">Whole Life Policy</a>
+      <a href="#">Last Expense Cover</a>
+      <a href="#">Credit Life</a>
+    </div>
+
+    <!-- Commercial Lines -->
+    <div class="fc">
+      <h5>Commercial Lines</h5>
+      <a href="#">Fire &amp; Special Perils</a>
+      <a href="#">Business Interruption</a>
+      <a href="#">Employer's Liability</a>
+      <a href="#">Public Liability</a>
+      <a href="#">Professional Indemnity</a>
+      <a href="#">Marine Cargo</a>
+      <a href="#">Engineering / CAR</a>
+      <a href="#">Agriculture / Crop</a>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="fc">
+      <h5>Quick Links</h5>
+      <a href="#home">Home</a>
+      <a href="#products">Our Products</a>
+      <a href="#why">Why Viking</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#" onclick="openModal('login')">Client Portal Login</a>
+      <a href="#">Make a Claim</a>
+      <a href="#">IRA Licensing</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 Viking Insurance Brokers Ltd. All rights reserved. | IRA Licence No. IB/XXX/XXXX</span>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Anti-Spam</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Modal
+  function openModal(tab){
+    document.getElementById('authModal').classList.add('open');
+    switchTab(tab||'login');
+  }
+  function closeModal(){
+    document.getElementById('authModal').classList.remove('open');
+  }
+  function switchTab(tab){
+    document.querySelectorAll('.mtab').forEach((t,i)=>{
+      t.classList.toggle('active',(tab==='login'&&i===0)||(tab==='signup'&&i===1));
+    });
+    document.querySelectorAll('.tc').forEach(c=>c.classList.remove('active'));
+    document.getElementById('tc-'+tab).classList.add('active');
+  }
+  document.getElementById('authModal').addEventListener('click',function(e){
+    if(e.target===this)closeModal();
+  });
+
+  // Active nav on scroll
+  const secs = document.querySelectorAll('[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll',()=>{
+    let cur='';
+    secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id;});
+    navAs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+  });
+</script>
+</body>
+</html>
